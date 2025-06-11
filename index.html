@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Sayang!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="music-control" class="hidden">
+        <img src="https://cdn-icons-png.flaticon.com/512/26/26472.png" alt="Music On" id="music-icon">
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="Ed Sheeran - Perfect.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <div id="login-overlay">
+        <div class="login-box">
+            <h2>Sebuah Pesan Spesial Untukmu</h2>
+            <p>Masukkan kata sandi rahasia kita:</p>
+            <input type="password" id="password-input" placeholder="Hint: Panggilan sayang...">
+            <button id="login-button">Masuk</button>
+            <p id="error-message" class="hidden">Kata sandinya salah, coba lagi ya!</p>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <header class="hero">
+            <h1 class="title">Happy Birthday</h1>
+            <h2 class="name">Aulia Asduar!</h2>
+            <p class="subtitle">Orang paling spesial di hidupku ❤️</p>
+        </header>
+
+        <section id="gift-section" class="section">
+            <h2>Klik Kado Ini Untukmu!</h2>
+            <div id="gift-box">
+                <img src="kado tertutup.png" alt="Kado Tertutup" id="gift-image">
+            </div>
+            <div id="wishes-container" class="hidden">
+                <h3>Surat-surat kecil dariku:</h3>
+                <p class="wish">- Semoga panjang umur dan sehat selalu. Di setiap doaku, namamu selalu ada.</p>
+                <p class="wish">- Semoga semua cita-citamu tercapai. Aku akan selalu jadi pendukung nomor satumu!</p>
+                <p class="wish">- Semoga kita bisa terus bersama, melewati suka duka, hingga selamanya.</p>
+                <p class="wish">- Tetap jadi Aulia yang luar biasa dan selalu membuatku jatuh cinta setiap hari.</p>
+            </div>
+        </section>
+
+        <section id="gallery-section" class="section">
+            <h2>Galeri Kenangan Kita</h2>
+            <div class="gallery-grid">
+                <div class="photo-card">
+                    <img src="2.jpg" alt="Foto Kenangan 1">
+                    <div class="photo-caption"><h3>Momen Pertama</h3><p>Awal dari segalanya...</p></div>
+                </div>
+                <div class="photo-card">
+                    <img src="WhatsApp Image 2025-06-11 at 13.18.17_bd19ffaa.jpg" alt="Foto Kenangan 2">
+                    <div class="photo-caption"><h3>Hari Spesial</h3><p>Senyummu hari itu, tak terlupakan.</p></div>
+                </div>
+                <div class="photo-card">
+                    <img src="3.jpg" alt="Foto Kenangan 3">
+                    <div class="photo-caption"><h3>Petualangan Kita</h3><p>Menjelajah dunia bersamamu.</p></div>
+                </div>
+                <div class="photo-card">
+                    <img src="4.jpg" alt="Foto Kenangan 4">
+                    <div class="photo-caption"><h3>Setiap Saat Berharga</h3><p>Candid favoritku!</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey-section" class="section">
+            <h2>Perjalanan Kita Sejauh Ini</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Obrolan Pertama - 1 Juni 2025</h3>
+                        <p>Hari di mana aku pertama kali melakukan pergerakan untuk mendekati dirimu</p>
+                        <img src="Screenshot 2025-06-11 131604.png" alt="Awal Kenalan">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Ngedate - 4 Juni 2025</h3>
+                        <p>Momen paling membahagiakan saat setelah kamu bilang "iya". Dunia terasa lebih indah.</p>
+                        <img src="jadiaan.jpg" alt="Hari Jadian">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Melukis - 9 Juni 2025</h3>
+                        <p>Menciptakan kenangan tak terlupakan di bawah langit senja. Aku harap akan ada banyak liburan kita selanjutnya.</p>
+                        <img src="jempol.jpg" alt="Liburan">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Dibuat dengan segenap cinta oleh,</p>
+            <h3>Dimas Arya Arjuna</h3>
+        </footer>
+    </div>
+
+    <div id="lightbox-modal" class="modal hidden">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="lightbox-image">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
