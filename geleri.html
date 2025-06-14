@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kenangan - Dimas & Aulia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body class="gallery-page">
+    <nav class="navbar">
+        <div class="nav-brand"><a href="index.html">D & A</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galeri.html" class="active">Galeri</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="line line1"></div><div class="line line2"></div><div class="line line3"></div>
+        </div>
+    </nav>
+
+    <header class="gallery-header">
+        <h1>Galeri Kenangan</h1>
+        <p>Setiap gambar adalah satu bab dari cerita kita.</p>
+    </header>
+
+    <main>
+        <div class="gallery-grid" style="padding: 0 20px 60px 20px;">
+            <div class="photo-card"><img src="2.jpg" alt="Foto 1"><div class="photo-caption"><h3>Momen Pertama</h3><p>Awal dari segalanya...</p></div></div>
+            <div class="photo-card"><img src="WhatsApp Image 2025-06-11 at 13.18.17_bd19ffaa.jpg" alt="Foto 2"><div class="photo-caption"><h3>Hari Spesial</h3><p>Senyummu tak terlupakan.</p></div></div>
+            <div class="photo-card"><img src="3.jpg" alt="Foto 3"><div class="photo-caption"><h3>Petualangan Kita</h3><p>Menjelajah dunia bersamamu.</p></div></div>
+            <div class="photo-card"><img src="4.jpg" alt="Foto 4"><div class="photo-caption"><h3>Setiap Saat Berharga</h3><p>Candid favoritku!</p></div></div>
+            <div class="photo-card"><img src="jadiaan.jpg" alt="Foto 5"><div class="photo-caption"><h3>Hari Jadian</h3><p>Dunia terasa lebih indah.</p></div></div>
+            <div class="photo-card"><img src="jempol.jpg" alt="Foto 6"><div class="photo-caption"><h3>Melukis Senja</h3><p>Kenangan tak terlupakan.</p></div></div>
+            <div class="photo-card"><img src="Screenshot 2025-06-11 131604.png" alt="Foto 7"><div class="photo-caption"><h3>Awal Chat</h3><p>Permulaan yang manis.</p></div></div>
+        </div>
+    </main>
+
+    <div id="lightbox-modal" class="modal hidden">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="lightbox-image">
+    </div>
+    <script src="galeri.js"></script>
+</body>
+</html>
