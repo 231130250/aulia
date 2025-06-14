@@ -1,5 +1,5 @@
 /* ======================================================= */
-/* SCRIPT.JS - VERSI FINAL DENGAN SESSION LOGIN            */
+/* SCRIPT.JS - VERSI FINAL DENGAN IKON GAMBAR & SESSION    */
 /* ======================================================= */
 
 console.log(
@@ -11,19 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cek status login di awal
     if (sessionStorage.getItem('isLoggedIn') === 'true') {
-        // Jika sudah login, lewati layar login
         document.getElementById('login-overlay').classList.add('hidden');
         document.getElementById('main-content').classList.remove('hidden');
         document.querySelector('.navbar').classList.remove('hidden');
-        
         const musicControl = document.getElementById('music-control');
         musicControl.classList.remove('hidden');
         musicControl.classList.add('visible');
-
-        // Coba putar musik, tangani jika browser memblokir autoplay
-        document.getElementById('background-music').play().catch(error => {
-            console.log("Autoplay musik dicegah oleh browser. Perlu interaksi pengguna untuk memulai.");
-        });
+        document.getElementById('background-music').play().catch(error => { console.log("Autoplay musik dicegah oleh browser."); });
     }
 
     // --- 1. SELEKSI ELEMEN ---
@@ -37,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorMessage = document.getElementById('error-message');
     const backgroundMusic = document.getElementById('background-music');
     const musicControl = document.getElementById('music-control');
-    const musicIcon = document.getElementById('music-icon');
+    const musicIcon = document.getElementById('music-icon'); // <-- Variabel ini diperlukan lagi
     const giftBox = document.getElementById('gift-box');
     const giftImage = document.getElementById('gift-image');
     const wishesContainer = document.getElementById('wishes-container');
@@ -63,9 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- 4. FUNGSI-FUNGSI UTAMA ---
     function handleLogin() {
         if (passwordInput.value.trim().toLowerCase() === secretPassword) {
-            // SIMPAN STATUS LOGIN
-            sessionStorage.setItem('isLoggedIn', 'true'); 
-
+            sessionStorage.setItem('isLoggedIn', 'true');
             loginOverlay.style.animation = 'fadeOut 1s forwards';
             setTimeout(() => {
                 loginOverlay.classList.add('hidden');
@@ -88,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
             musicIcon.src = 'musik-on.png';
         } else {
             backgroundMusic.pause();
-            musicIcon.src = 'musik off.png'; // <-- Diperbaiki dari "musik off.png"
+            musicIcon.src = 'musik off.png';
         }
     }
 
@@ -126,22 +118,17 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.classList.toggle('nav-active');
         hamburger.classList.toggle('toggle');
     });
-
     loginButton.addEventListener('click', handleLogin);
     passwordInput.addEventListener('keyup', (event) => {
         if (event.key === 'Enter') handleLogin();
     });
-
     musicControl.addEventListener('click', toggleMusic);
     giftBox.addEventListener('click', openGift);
-
     imagesToLightbox.forEach(item => item.addEventListener('click', openLightbox));
-
     closeButton.addEventListener('click', closeLightbox);
     lightboxModal.addEventListener('click', (event) => {
         if (event.target === lightboxModal) closeLightbox();
     });
-
     const timelineObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -149,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, { threshold: 0.3 });
-
     timelineItems.forEach(item => {
         timelineObserver.observe(item);
     });
