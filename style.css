@@ -23,8 +23,6 @@ body {
     animation: gradientAnimation 15s ease infinite;
 }
 
-
-
 /* --- 2. KELAS BANTU & ANIMASI GLOBAL --- */
 .hidden { display: none !important; }
 @keyframes gradientAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
@@ -47,7 +45,12 @@ body {
 /* --- 4. ELEMEN KONTROL (MUSIK) --- */
 #music-control { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-color: var(--primary-color); border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 3000; transform: scale(0); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); animation: pulse 2.5s infinite; }
 #music-control.visible { transform: scale(1); }
-#music-control img { width: 25px; height: 25px; filter: invert(1); }
+#music-icon-css { position: relative; width: 8px; height: 12px; background: white; transition: all 0.3s ease; }
+#music-icon-css::before { content: ''; position: absolute; top: 2px; right: 100%; width: 0; height: 8px; border-style: solid; border-width: 4px 6px 4px 0; border-color: transparent white transparent transparent; transition: all 0.3s ease; }
+#music-icon-css::after { content: ''; position: absolute; top: -2px; left: 100%; margin-left: 2px; width: 15px; height: 18px; border: 2px solid white; border-radius: 50%; border-left-color: transparent !important; transform: scale(0); opacity: 0; transition: all 0.3s ease; }
+#music-control.playing #music-icon-css::after { transform: scale(1); opacity: 1; }
+#music-control.muted #music-icon-css { background: transparent; }
+#music-control.muted #music-icon-css::before { border-width: 0; top: -5px; right: -8px; width: 2px; height: 22px; background: white; transform: rotate(45deg); }
 
 /* --- 5. LAYAR LOGIN --- */
 #login-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 4000; animation: fadeIn 1s ease-in-out; }
@@ -132,17 +135,11 @@ footer h3 { font-family: 'Pacifico', cursive; font-size: 2em; margin: 10px 0 0 0
 @media (max-width: 768px) {
     .section { padding: 60px 15px; }
     .login-box { padding: 30px; width: 85%; }
-    .hero .title { font-size: 4em; }
-    .hero .name { font-size: 2.2em; }
-    .hero .subtitle { font-size: 1.2em; padding: 0 10px; }
+    .hero .title { font-size: 4em; } .hero .name { font-size: 2.2em; } .hero .subtitle { font-size: 1.2em; padding: 0 10px; }
     .section h2 { font-size: 2.5em; }
-
-    /* Mengubah timeline menjadi satu sisi di mobile */
     .timeline::after { left: 20px; }
     .timeline-item, .timeline-item:nth-child(even) { width: 100%; padding-left: 50px; padding-right: 10px; left: 0; text-align: left; }
     .timeline-item::after, .timeline-item:nth-child(odd)::after, .timeline-item:nth-child(even)::after { left: 11px; }
-
-    /* Penyesuaian Navbar di mobile */
     .nav-links { position: fixed; top: 0; right: 0; height: 100vh; width: 60%; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(15px); flex-direction: column; align-items: center; justify-content: center; gap: 40px; transform: translateX(100%); transition: transform 0.5s ease-in-out; box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
     .nav-links.nav-active { transform: translateX(0%); }
     .nav-links a { font-size: 1.2em; }
@@ -155,9 +152,7 @@ footer h3 { font-family: 'Pacifico', cursive; font-size: 2em; margin: 10px 0 0 0
 @media (max-width: 480px) {
     .login-box h2 { font-size: 1.8em; }
     #password-input, #login-button { font-size: 0.9em; }
-    .hero .title { font-size: 3em; }
-    .hero .name { font-size: 1.8em; }
-    .hero .subtitle { font-size: 1em; }
+    .hero .title { font-size: 3em; } .hero .name { font-size: 1.8em; } .hero .subtitle { font-size: 1em; }
     .section h2 { font-size: 2em; }
     .wish { font-size: 1em; padding: 10px 15px; }
     .close-button { top: 15px; right: 25px; font-size: 35px; }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="home.html">🏠 Home</a></li>
+      <li><a href="#gallery">📷 Gallery</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>🎉 Happy Birthday Sayang! 🎉</h1>
+  </header>
+
+  <section class="journey">
+    <h2>📖 Journey Kita</h2>
+    <div class="story">
+      <p><strong>📅 1 Juni 2024</strong> — Hari pertama aku chat kamu 💬</p>
+      <img src="gambar/chat-pertama.jpg" class="journey-img">
+
+      <p><strong>📅 2 Juni 2024</strong> — Jalan ke Kopi Kenangan ☕</p>
+      <img src="gambar/kopi-kenangan.jpg" class="journey-img">
+
+      <p><strong>📅 3 Juni 2024</strong> — Hari kita jadian 💖</p>
+      <img src="gambar/jadian.jpg" class="journey-img">
+
+      <p><strong>📅 4 Juni 2024</strong> — Makan dan jalan bareng 🍜🚶</p>
+      <img src="gambar/makan-jalan.jpg" class="journey-img">
+    </div>
+  </section>
+
+  <section class="doa">
+    <h2>🕊️ Doa Untukmu</h2>
+    <div class="box" onclick="toggleDoa(this)">
+      Klik untuk buka doa 1
+      <div class="content">Semoga kamu sehat selalu dan bahagia 💐</div>
+    </div>
+    <div class="box" onclick="toggleDoa(this)">
+      Klik untuk buka doa 2
+      <div class="content">Semoga cinta kita makin kuat tiap hari 💞</div>
+    </div>
+    <div class="box" onclick="toggleDoa(this)">
+      Klik untuk buka doa 3
+      <div class="content">Semoga semua mimpimu tercapai. Aku di sini 🫶</div>
+    </div>
+  </section>
+
+  <section class="upload">
+    <h2>🖼️ Album Kenangan</h2>
+    <input type="file" id="imageUpload" accept="image/*">
+    <button onclick="uploadImage()">Upload Foto</button>
+    <div id="gallery"></div>
+  </section>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
