@@ -1,6 +1,4 @@
-/* ======================================================= */
-/* SCRIPT.JS - VERSI FINAL DENGAN IKON GAMBAR & SESSION    */
-/* ======================================================= */
+
 
 console.log(
     "%cHei, Adek! Kalau kamu bisa lihat ini, berarti kamu memang pacar IT-ku yang paling keren. I love you more than `i++` in an infinite loop. ❤️ - Dimas",
