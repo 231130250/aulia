@@ -85,10 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleMusic() {
         if (backgroundMusic.paused) {
             backgroundMusic.play();
-            musicIcon.src = 'music-on.png';
+            musicIcon.src = 'musik-on.png';
         } else {
             backgroundMusic.pause();
-            musicIcon.src = 'music-off.png'; // <-- Diperbaiki dari "musik off.png"
+            musicIcon.src = 'musik off.png'; // <-- Diperbaiki dari "musik off.png"
         }
     }
 
